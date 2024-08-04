@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="decorations.css" />
+    <title>Carlos De La Cruz</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="container">
+          <h3>Carlos De La Cruz</h3>
+          <h4 style="font-size: 2.5rem; color: #457b9d">Software Developer</h4>
+          <h4 style="font-size: 1.3rem; color: #457b9d">
+            3+ years of experience
+          </h4>
+        </div>
+      </header>
+
+      <section id="section1" class="cool-effect">
+        <div class="content"></div>
+      </section>
+      <section id="about" class="cool-effect">
+        <div class="content">
+          <h1 style="font-size: 8rem">About Me</h1>
+          <p>
+            Lorem ipsum odor amet, consectetuer adipiscing elit. Orci volutpat
+            congue tristique primis nostra id mus fringilla. Quisque finibus
+            mattis adipiscing; non suscipit litora. Pretium maximus sed nulla
+            eget hacLorem ipsum odor amet, consectetuer adipiscing elit. Orci
+            volutpat congue tristique primis nostra id mus fringilla. Quisque
+            finibus mattis adipiscing; non suscipit litora. Pretium maximus sed
+            nulla eget hac magna eget.Lorem ipsum odor amet, consectetuer.
+          </p>
+        </div>
+      </section>
+      <section id="work" class="cool-effect">
+        <div class="content">
+          <h3 style="font-size: 8rem">Work experience</h3>
+          <div class="columns">
+            <div class="column">
+              <h2 style="color: #e63946; font-size: 2rem">Accenture</h2>
+              <h4>October 2022 - Present</h4>
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Orci
+                volutpat congue tristique primis nostra id mus fringilla.
+                Quisque finibus mattis adipiscing; non suscipit litora. Pretium
+                maximus sed nulla eget hacLorem ipsum odor amet, consectetuer
+                adipiscing elit. Orci volutpat congue tristique primis nostra id
+                mus fringilla. Quisque finibus mattis adipiscing; non suscipit
+                litora. Pretium maximus sed nulla eget hac magna eget.Lorem
+                ipsum odor amet, consectetuer. Lorem ipsum odor amet,
+                consectetuer adipiscing elit. Orci volutpat congue tristique
+                primis nostra id mus fringilla. Quisque finibus mattis
+                adipiscing; non suscipit litora. Pretium maximus sed nulla eget
+                hacLorem ipsum odor amet, consectetuer adipiscing elit. Orci
+                volutpat congue tristique primis nostra id mus fringilla.
+                Quisque finibus mattis adipiscing; non suscipit litora. Pretium
+                maximus sed nulla eget hac magna eget.Lorem ipsum odor amet,
+                consectetuer
+              </p>
+            </div>
+            <div class="column">
+              <h2 style="color: #e63946; font-size: 2rem">Kwan Technologies</h2>
+              <h4>October 2021 - July 2022</h4>
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Orci
+                volutpat congue tristique primis nostra id mus fringilla.
+                Quisque finibus mattis adipiscing; non suscipit litora. Pretium
+                maximus sed nulla eget hacLorem ipsum odor amet, consectetuer
+                adipiscing elit. Orci volutpat congue tristique primis nostra id
+                mus fringilla. Quisque finibus mattis adipiscing; non suscipit
+                litora. Pretium maximus sed nulla eget hac magna eget.Lorem
+                ipsum odor amet, consectetuer. Lorem ipsum odor amet,
+                consectetuer adipiscing elit. Orci volutpat congue tristique
+                primis nostra id mus fringilla. Quisque finibus mattis
+                adipiscing; non suscipit litora. Pretium maximus sed nulla eget
+                hacLorem ipsum odor amet, consectetuer adipiscing elit. Orci
+                volutpat congue tristique primis nostra id mus fringilla.
+                Quisque finibus mattis adipiscing; non suscipit litora. Pretium
+                maximus sed nulla eget hac magna eget.Lorem ipsum odor amet,
+                consectetuer
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="cool-effect">
+        <div class="content">
+          <h3 style="font-size: 8rem">Contact</h3>
+          <p>
+            Lorem ipsum odor amet, consectetuer adipiscing elit. Orci volutpat
+            congue tristique primis nostra id mus fringilla. Quisque finibus
+            mattis adipiscing; non suscipit litora. Pretium maximus sed nulla
+            eget hacLorem ipsum odor amet, consectetuer adipiscing elit. Orci
+            volutpat congue tristique primis nostra id mus fringilla. Quisque
+            finibus mattis adipiscing; non suscipit litora. Pretium maximus sed
+            nulla eget hac magna eget.Lorem ipsum odor amet, consectetuer.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Made by Carlos</p>
+    </footer>
+    <div class="nav-buttons">
+      <button id="up-button" onclick="scrollToSection('up')">
+        <span class="arrow">&#9650;</span>
+      </button>
+      <button id="down-button" onclick="scrollToSection('down')">
+        <span class="arrow">&#9660;</span>
+      </button>
+    </div>
+    <script>
+      const sections = document.querySelectorAll("section");
+      let currentSectionIndex = 0;
+
+      function scrollToSection(direction) {
+        if (direction === "down") {
+          currentSectionIndex++;
+          if (currentSectionIndex >= sections.length) {
+            currentSectionIndex = sections.length - 1;
+          }
+        } else {
+          currentSectionIndex--;
+          if (currentSectionIndex < 0) {
+            currentSectionIndex = 0;
+          }
+        }
+
+        const section = sections[currentSectionIndex];
+        const sectionRect = section.getBoundingClientRect();
+        const offset =
+          sectionRect.top +
+          window.scrollY -
+          (window.innerHeight - sectionRect.height) / 2;
+
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
+
+        updateNavButtons();
+      }
+
+      function updateNavButtons() {
+        const upButton = document.getElementById("up-button");
+        const downButton = document.getElementById("down-button");
+
+        if (currentSectionIndex === 0) {
+          upButton.classList.add("hidden");
+        } else {
+          upButton.classList.remove("hidden");
+        }
+
+        if (currentSectionIndex === sections.length - 1) {
+          downButton.classList.add("hidden");
+        } else {
+          downButton.classList.remove("hidden");
+        }
+      }
+
+      window.addEventListener("scroll", function () {
+        const distance = window.scrollY;
+        if (!isNaN(distance)) {
+          document.querySelector("header").style.transform = `translateY(${
+            distance * 0.5
+          }px)`;
+          document.querySelector(".container").style.transform = `translateY(${
+            distance * 0.2
+          }px)`;
+          document
+            .querySelectorAll(".cool-effect")
+            .forEach((section, index) => {
+              section.style.transform = `translateY(${
+                distance * 0.1 * index
+              }px)`;
+            });
+        }
+
+        let sectionIndex = Array.from(sections).findIndex((section) => {
+          const rect = section.getBoundingClientRect();
+          return (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          );
+        });
+
+        if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
+          currentSectionIndex = sectionIndex;
+          updateNavButtons();
+        }
+      });
+
+      updateNavButtons();
+    </script>
+  </body>
+</html>
