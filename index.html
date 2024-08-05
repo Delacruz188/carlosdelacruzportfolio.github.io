@@ -162,37 +162,6 @@
         }
       }
 
-      window.addEventListener("scroll", function () {
-        const distance = window.scrollY;
-        if (!isNaN(distance)) {
-          document.querySelector("header").style.transform = `translateY(${
-            distance * 0.5
-          }px)`;
-          document.querySelector(".container").style.transform = `translateY(${
-            distance * 0.2
-          }px)`;
-          document
-            .querySelectorAll(".cool-effect")
-            .forEach((section, index) => {
-              section.style.transform = `translateY(${
-                distance * 0.1 * index
-              }px)`;
-            });
-        }
-
-        let sectionIndex = Array.from(sections).findIndex((section) => {
-          const rect = section.getBoundingClientRect();
-          return (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          );
-        });
-
-        if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
-          currentSectionIndex = sectionIndex;
-          updateNavButtons();
-        }
-      });
       updateNavButtons();
     </script>
   </body>
