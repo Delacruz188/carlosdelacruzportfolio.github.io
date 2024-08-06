@@ -257,6 +257,21 @@ footer {
   font-size: 1.4rem;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.social-icons a {
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
 /* Responsive Design */
 
 /* Tablet and small screens */
@@ -337,6 +352,11 @@ footer {
 
   #animated-text {
     font-size: 1.2rem;
+  }
+
+  .social-icons a svg {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -419,5 +439,10 @@ footer {
 
   #animated-text {
     font-size: 1rem;
+  }
+
+  .social-icons a svg {
+    width: 30px;
+    height: 30px;
   }
 }
